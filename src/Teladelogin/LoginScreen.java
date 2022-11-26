@@ -56,7 +56,7 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotaoEntrar);
-        BotaoEntrar.setBounds(330, 210, 80, 30);
+        BotaoEntrar.setBounds(240, 210, 80, 30);
 
         BotaoSair.setText("Saída");
         BotaoSair.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,7 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BotaoSair);
-        BotaoSair.setBounds(240, 210, 80, 30);
+        BotaoSair.setBounds(330, 210, 80, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/background 640x423.jpg"))); // NOI18N
         getContentPane().add(jLabel4);
