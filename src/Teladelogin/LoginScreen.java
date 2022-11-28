@@ -11,7 +11,7 @@ import java.util.Date;
  * @author davir
  */
 public class LoginScreen extends javax.swing.JFrame {
-    
+    int counter = 0;
     /**
      * Creates new form MainScreen
      */
@@ -76,27 +76,37 @@ public class LoginScreen extends javax.swing.JFrame {
 
     private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
         Date date = new Date();
-        if(txtLogin.getText().equals("75")){
-            JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
-        }if(txtLogin.getText().equals("69")){
-            JOptionPane.showMessageDialog(null,"José Carlos: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
-        }
-        else if (txtLogin.getText().equals("75") && txtLogin.getText().equals("69")){
-            JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
-        }
-        
+        while(counter == 0){
+            if(counter == 0){
+                if(txtLogin.getText().equals("75")){
+                    JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
+                }if(txtLogin.getText().equals("69")){
+                    JOptionPane.showMessageDialog(null,"José Carlos: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
+                }
+                else if (txtLogin.getText().equals("75") && txtLogin.getText().equals("69")){
+                    JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
+                }
+                counter++;
+            }    
+        }   
     }//GEN-LAST:event_BotaoEntrarActionPerformed
 
     private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
         Date date = new Date();
-        if(txtLogin.getText().equals("75")){
-            JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"SAÍDA",JOptionPane.DEFAULT_OPTION);
-        }if(txtLogin.getText().equals("69")){
-            JOptionPane.showMessageDialog(null,"José Carlos: "+date,"SAÍDA",JOptionPane.DEFAULT_OPTION);
-        }
-        else if (txtLogin.getText().equals("75") && txtLogin.getText().equals("69")){
-            JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
-        }
+        while(counter == 1){
+            if(counter == 1){
+                if(txtLogin.getText().equals("75")){
+                    JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"SAÍDA",JOptionPane.DEFAULT_OPTION);
+                }if(txtLogin.getText().equals("69")){
+                    JOptionPane.showMessageDialog(null,"José Carlos: "+date,"SAÍDA",JOptionPane.DEFAULT_OPTION);
+                }
+                else if (txtLogin.getText().equals("75") && txtLogin.getText().equals("69")){
+                    JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
+                }
+                counter--;
+            }
+            
+        }    
     }//GEN-LAST:event_BotaoSairActionPerformed
 
     /**
