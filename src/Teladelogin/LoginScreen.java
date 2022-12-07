@@ -11,13 +11,14 @@ import java.util.Date;
  * @author davir
  */
 public class LoginScreen extends javax.swing.JFrame {
-    int counter = 0;
+    private int counter = 0;
     /**
      * Creates new form MainScreen
      */
     public LoginScreen() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -29,67 +30,53 @@ public class LoginScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        BotaoSair = new javax.swing.JButton();
         txtLogin = new javax.swing.JTextField();
         BotaoEntrar = new javax.swing.JButton();
-        BotaoSair = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Login Screen");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ID Screen");
         setMaximumSize(new java.awt.Dimension(1280, 853));
         setMinimumSize(new java.awt.Dimension(650, 440));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("ID");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(310, 150, 100, 30);
-        getContentPane().add(txtLogin);
-        txtLogin.setBounds(260, 180, 130, 20);
-
-        BotaoEntrar.setText("Entrada");
-        BotaoEntrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoEntrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BotaoEntrar);
-        BotaoEntrar.setBounds(240, 210, 80, 30);
-
         BotaoSair.setText("Saída");
+        BotaoSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotaoSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoSairActionPerformed(evt);
             }
         });
         getContentPane().add(BotaoSair);
-        BotaoSair.setBounds(330, 210, 80, 30);
+        BotaoSair.setBounds(310, 190, 80, 30);
+        getContentPane().add(txtLogin);
+        txtLogin.setBounds(240, 160, 130, 20);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/background 640x423.jpg"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 0, 640, 424);
+        BotaoEntrar.setText("Entrada");
+        BotaoEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoEntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotaoEntrar);
+        BotaoEntrar.setBounds(220, 190, 80, 30);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("ID");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(290, 120, 100, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/background 640x423.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -20, 630, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
-        Date date = new Date();
-        while(counter == 0){
-            if(counter == 0){
-                if(txtLogin.getText().equals("75")){
-                    JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
-                }if(txtLogin.getText().equals("69")){
-                    JOptionPane.showMessageDialog(null,"José Carlos: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
-                }
-                else if (txtLogin.getText().equals("75") && txtLogin.getText().equals("69")){
-                    JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
-                }
-                counter++;
-            }    
-        }   
-    }//GEN-LAST:event_BotaoEntrarActionPerformed
 
     private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
         Date date = new Date();
@@ -97,17 +84,30 @@ public class LoginScreen extends javax.swing.JFrame {
             if(counter == 1){
                 if(txtLogin.getText().equals("75")){
                     JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"SAÍDA",JOptionPane.DEFAULT_OPTION);
-                }if(txtLogin.getText().equals("69")){
-                    JOptionPane.showMessageDialog(null,"José Carlos: "+date,"SAÍDA",JOptionPane.DEFAULT_OPTION);
                 }
-                else if (txtLogin.getText().equals("75") && txtLogin.getText().equals("69")){
+                else{
                     JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
                 }
                 counter--;
             }
-            
-        }    
+
+        }
     }//GEN-LAST:event_BotaoSairActionPerformed
+
+    private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
+        Date date = new Date();
+        while(counter == 0){
+            if(counter == 0){
+                if(txtLogin.getText().equals("75")){
+                    JOptionPane.showMessageDialog(null,"Chiquinho da Silva: "+date,"ENTRADA",JOptionPane.DEFAULT_OPTION);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"ID INCORRETO!","ERROR MESSAGE",JOptionPane.INFORMATION_MESSAGE);
+                }
+                counter++;
+            }
+        }
+    }//GEN-LAST:event_BotaoEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,7 +149,7 @@ public class LoginScreen extends javax.swing.JFrame {
     private javax.swing.JButton BotaoEntrar;
     private javax.swing.JButton BotaoSair;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtLogin;
     // End of variables declaration//GEN-END:variables
 }
